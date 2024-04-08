@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Principal from './Principal/Principal';
-import Colors from './Colors/Colors';
+import ColorPallet from './colorPallet/ColorPallet';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Principal />} />
           {/* //Proyectos */}
-          <Route path="/color-pallet" element={<Colors />} />
+          <Route path="/color-pallet" element={<ColorPallet />} />
         </Routes>
       </Router>
     </>

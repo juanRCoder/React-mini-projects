@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Colors() {
+function ColorPallet() {
     const [colors, setColors] = useState<string[]>([]);
     const [change, setChange] = useState<boolean>(false);
     const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -71,4 +71,4 @@ function Colors() {
     );
 }
 
-export default Colors;
+export default ColorPallet;
