@@ -8,10 +8,17 @@ export default {
         slate800: "#1e293b",
       },
       screens: {
-        vs: "450px",
+        vss: "360",
+        vs: "480px",
       },
       inset: {
-        '-65': '-65px',
+        "-65": "-65px",
+      },
+      letterSpacing: {
+        tightestt: ".3rem",
+      },
+      fontFamily: {
+        spaceMono: ["Space Mono", "monospace"],
       },
     },
   },
