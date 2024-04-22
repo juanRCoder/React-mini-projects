@@ -80,13 +80,13 @@ function ColorPallet() {
                     </label>
                 </div>
                 <h1 className={`sm:text-5xl vs:text-center vs:mt-0 mt-8 w-11/12 text-left pb-5 font-bold text-4xl ${darkMode ? 'dark:text-slate-300 text-slate-800' : 'dark:text-gray-900 text-white'}`}>Color Palette</h1>
-                <section className='w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-xl'>
+                <section className='vs:flex w-11/12 md:w-10/12 lg:w-4/6 max-w-screen-xl'>
                     {colors.map((color, index) => (
-                        <div key={index} style={{ backgroundColor: `#${color}` }} onClick={() => copyToClipboard(color)} className='md:last:rounded-tr-2xl md:first:rounded-tl-2xl font-semibold cursor-pointer w-full pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>#{color}</div>
+                        <div key={index} style={{ backgroundColor: `#${color}` }} onClick={() => copyToClipboard(color)} className='text-black font-semibold cursor-pointer w-full p-3 pt-6 pb-6 vs:pt-36 vs:pb-36 flex items-center justify-center'>#{color}</div>
                     ))}
                 </section>
-                <section className='w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-xl'>
-                    <div style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => copyToClipboard('#FFFFFF')} className='md:border-l-2 md:border-slate-300 font-semibold cursor-pointer w-full pt-5 pb-5 flex items-center justify-center'>#FFFFFF</div>
+                <section className='vs:flex w-11/12 md:w-10/12 lg:w-4/6 max-w-screen-xl'>
+                    <div style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => copyToClipboard('#FFFFFF')} className='font-semibold cursor-pointer w-full p-3 pt-6 pb-6 flex items-center justify-center'>#FFFFFF</div>
                     <div style={{ backgroundColor: '#000000', color: '#ffffff' }} onClick={() => copyToClipboard('#000000')} className='font-semibold cursor-pointer w-full p-3 pt-6 pb-6 flex items-center justify-center'>#000000</div>
                 </section>
                 <button onClick={() => setChange(!change)} className={`w-full  vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-xl justify-center font-bold block p-3 py-5 md:rounded-bl-md md:rounded-br-md text-xl  ${darkMode ? 'dark:text-slate-950 dark:bg-slate-50 dark:hover:bg-slate-400' : 'dark:text-slate-50 dark:bg-gray-950 dark:hover:bg-slate-900'} transition`}>Generator Pallet</button>
