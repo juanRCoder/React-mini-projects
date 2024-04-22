@@ -82,7 +82,7 @@ function ColorPallet() {
             <h1 className={`sm:text-5xl vs:text-center vs:mt-0 mt-8 w-11/12 text-left pb-5 font-bold text-4xl ${darkMode ? 'dark:text-slate-300 text-slate-800' : 'dark:text-gray-900 text-white'}`}>Color Palette</h1>
             <section className='w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-xl'>
                 {colors.map((color, index) => (
-                    <div key={index} style={{ backgroundColor: `#${color}` }} onClick={() => copyToClipboard(color)} className='last:rounded-tr-3xl first:rounded-tl-3xl text-black font-semibold cursor-pointer w-full p-3 pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>#{color}</div>
+                    <div key={index} style={{ backgroundColor: `#${color}` }} onClick={() => copyToClipboard(color)} className='md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-black font-semibold cursor-pointer w-full p-3 pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>#{color}</div>
                 ))}
             </section>
             <section className='w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-xl'>
