@@ -6,49 +6,49 @@ function ColorPallet() {
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [copy, setCopy] = useState(false);
 
-    useEffect(() => {
-        const requestFetch = async () => {
-            try {
-                const query = await fetch('https://api-random-colors.onrender.com/colors');
-                const data = await query.json();
-                if (!query.ok) throw new Error('No se pudo realizar la solicitud');
-
-                const extractedColors = data.map((obj: string) => {
-                    //Quitar 'rgb('  ')'
-                    let rgb_hex = Object.values(obj)[0].split('(')[1].split(')')[0].split(',');
-                    //convertir a color hexadecimal
-                    return rgb_hex.map((num: string) => parseInt(num).toString(16).padStart(2, '0')).join('');
-                });
-                setColors(extractedColors);
-            }
-            catch (e) {
-                console.error(e);
-            }
-        }
-        requestFetch();
-
-    }, [change])
-
-    //COLORES ALEATORIOS (SIN LA API)
     // useEffect(() => {
-    //     let lista: string[] = [];
-    //     const baseColor: string = Math.floor(Math.random() * 16).toString(16).toUpperCase();
+    //     const requestFetch = async () => {
+    //         try {
+    //             const query = await fetch('https://api-random-colors.onrender.com/colors');
+    //             const data = await query.json();
+    //             if (!query.ok) throw new Error('No se pudo realizar la solicitud');
 
-    //     //Solo agregar 4 elementos a la lista
-    //     while (lista.length < 4) {
-    //         const random1: string = Math.floor(Math.random() * 8).toString();
-    //         const random2: string = Math.floor(Math.random() * 8).toString();
-    //         const random3: string = Math.floor(Math.random() * 8).toString();
-    //         const random4: string = Math.floor(Math.random() * 8).toString();
-
-    //         if (random1 !== random2) {
-    //             const color = `#${baseColor}${baseColor}${random1}${random3}${random2}${random4}`;
-    //             lista.push(color);
+    //             const extractedColors = data.map((obj: string) => {
+    //                 //Quitar 'rgb('  ')'
+    //                 let rgb_hex = Object.values(obj)[0].split('(')[1].split(')')[0].split(',');
+    //                 //convertir a color hexadecimal
+    //                 return rgb_hex.map((num: string) => parseInt(num).toString(16).padStart(2, '0')).join('');
+    //             });
+    //             setColors(extractedColors);
+    //         }
+    //         catch (e) {
+    //             console.error(e);
     //         }
     //     }
-    //     setColors(lista);
+    //     requestFetch();
 
-    // }, [change]);
+    // }, [change])
+
+    //COLORES ALEATORIOS (SIN LA API)
+    useEffect(() => {
+        let lista: string[] = [];
+        const baseColor: string = Math.floor(Math.random() * 16).toString(16).toUpperCase();
+
+        //Solo agregar 4 elementos a la lista
+        while (lista.length < 5) {
+            const random1: string = Math.floor(Math.random() * 8).toString();
+            const random2: string = Math.floor(Math.random() * 8).toString();
+            const random3: string = Math.floor(Math.random() * 8).toString();
+            const random4: string = Math.floor(Math.random() * 8).toString();
+
+            if (random1 !== random2) {
+                const color = `#${baseColor}${baseColor}${random1}${random3}${random2}${random4}`;
+                lista.push(color);
+            }
+        }
+        setColors(lista);
+
+    }, [change]);
 
     const copyToClipboard = async (color: string) => {
         try {
@@ -82,7 +82,9 @@ function ColorPallet() {
             <h1 className={`sm:text-5xl vs:text-center vs:mt-0 mt-8 w-11/12 text-left pb-5 font-bold text-4xl ${darkMode ? 'dark:text-slate-300 text-slate-800' : 'dark:text-gray-900 text-white'}`}>Color Palette</h1>
             <section className='w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-xl'>
                 {colors.map((color, index) => (
-                    <div key={index} style={{ backgroundColor: `#${color}` }} onClick={() => copyToClipboard(color)} className='last:rounded-tr-3xl first:rounded-tl-3xl text-black font-semibold cursor-pointer w-full p-3 pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>#{color}</div>
+                    <div key={index} style={{ backgroundColor: `${color}` }} onClick={() => copyToClipboard(color)} className='md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-black font-semibold cursor-pointer w-full p-3 pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>
+                        {color}
+                    </div>
                 ))}
             </section>
             <section className='w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-xl'>
