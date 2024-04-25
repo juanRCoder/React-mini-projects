@@ -4,11 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        red: "#a51010",
-        slate800: "#1e293b",
       },
       screens: {
-        vss: "360",
+        vxs: "360px",
         vs: "480px",
       },
       inset: {
