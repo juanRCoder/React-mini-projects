@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Principal from './Principal/Principal';
+import Principal from './Principal/Principal';
 import ColorPallet from './colorPallet/ColorPallet';
 import './App.css';
 
