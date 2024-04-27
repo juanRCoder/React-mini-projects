@@ -9,9 +9,6 @@ export default {
         vxs: "360px",
         vs: "480px",
       },
-      inset: {
-        "-65": "-65px",
-      },
       letterSpacing: {
         tightestt: ".3rem",
       },
