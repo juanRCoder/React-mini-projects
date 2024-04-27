@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 function TipAmount() {
-    const [bill, setBill] = useState<number>(0);
-    const [people, setPeople] = useState<number>(0);
+    const [bill, setBill] = useState<string>('');
+    const [people, setPeople] = useState<string>('');
+    const [custom, setCustom] = useState<string>('');
     const [statusPeople, setStatusPeople] = useState<boolean>(false);
 
     const [totalForPerson, setTotalForPerson] = useState<number>(0);
@@ -10,21 +11,33 @@ function TipAmount() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        if (name === 'bill') setBill(parseInt(value));
-        else if (name === 'people') value === '' ? setPeople(0) : setPeople(parseInt(value));
-        else if (name === 'custom') value === '' ? Calculator(0) : Calculator(parseInt(value));
+        if (name === 'bill') setBill(value);
+        else if (name === 'people') value === '' ? setPeople('0') : setPeople(value);
+        else if (name === 'custom') { 
+            value === '' ? Calculator(0) : Calculator(parseInt(value)); 
+            setCustom(value);
+        }
     }
 
     const Calculator = (tip: number) => {
-        if (people !== 0) {
+        if (people !== '0') {
             setStatusPeople(false);
-            const tipTotal: number = bill * ((tip) / 100);
+            const tipTotal: number = parseInt(bill) * ((tip) / 100);
 
-            setTotalForPerson(Number(((bill + tipTotal) / people).toFixed(2)));
-            setTipAmountForPerson(Number((tipTotal / people).toFixed(2)));
+            setTotalForPerson(Number(((parseInt(bill) + tipTotal) / parseInt(people)).toFixed(2)));
+            setTipAmountForPerson(Number((tipTotal / parseInt(people)).toFixed(2)));
         } else {
             setStatusPeople(true);
         }
+    }
+
+    const resetInputs = () => {
+        setBill('');
+        setPeople('');
+        setCustom('');
+        setStatusPeople(false);
+        setTotalForPerson(0);
+        setTipAmountForPerson(0);
     }
 
     return (
@@ -34,16 +47,18 @@ function TipAmount() {
                     <div>
                         <label htmlFor="bill">Bill</label>
                         <input type="number" id="bill" name="bill" placeholder="0"
+                            value={bill}
                             className="mb-3 pl-3 ml-3"
                             onChange={handleChange}
                         />
                     </div>
                     <div>
                         {[
+                            [5],
                             [10],
                             [15],
-                            [20],
                             [25],
+                            [50],
                         ].map(([number], i) => (
                             <button key={i} className="hover:bg-violet-600 m-2 p-1 outline outline-violet-600"
                                 onClick={() => Calculator(number)}
@@ -51,8 +66,9 @@ function TipAmount() {
                                 {number}%
                             </button>
                         ))}
-                        <input type="number" name="custom" placeholder="Custom"
+                        <input type="text" name="custom" placeholder="Custom"
                             className="text-right m-2 p-1 outline outline-violet-600"
+                            value={custom}
                             onChange={handleChange}
                         />
                     </div>
@@ -62,6 +78,7 @@ function TipAmount() {
                     <label htmlFor="people">Number of People</label>
                     <input type="number" id="people" name="people" placeholder="0"
                         className="pl-3 ml-3"
+                        value={people}
                         onChange={handleChange}
                     />
                 </div>
@@ -71,7 +88,7 @@ function TipAmount() {
                     <p><b>Tip Amount / person</b></p>
                     <p>$ {totalForPerson}</p>
                     <button
-                        onClick={() => window.location.reload()}
+                        onClick={resetInputs}
                         className="w-full block hover:bg-orange-500 p-3 outline outline-orange-500 mt-3"
                     >Reset</button>
                 </div>
