@@ -31,7 +31,7 @@ function ColorPallet() {
 
     //COLORES ALEATORIOS (SIN LA API)
     useEffect(() => {
-        let lista: string[] = [];
+        const lista: string[] = [];
         const baseColor: string = Math.floor(Math.random() * 16).toString(16).toUpperCase();
 
         //Solo agregar 4 elementos a la lista

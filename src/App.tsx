@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Principal from './Principal/Principal';
+import Principal from './Principal/Principal';
 import ColorPallet from './colorPallet/ColorPallet';
-import TipAmount from './TipAmount';
+import TipAmount from './tipAmount/TipAmount';
 import './App.css';
 
 function App() {
@@ -10,12 +10,12 @@ function App() {
     <>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Principal />} /> */}
+          <Route path="/" element={<Principal />} />
           {/* Proyectos */}
           <Route path="/color-pallet" element={<ColorPallet />} />
-
+          <Route path="/tip-amount" element={<TipAmount />} />
           {/* En proceso */}
-          <Route path="/" element={<TipAmount />} />
+
         </Routes>
       </Router>
     </>
