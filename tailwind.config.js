@@ -3,7 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        app: '#384E5B'
+      },
       screens: {
         vxs: "360px",
         vs: "480px",
