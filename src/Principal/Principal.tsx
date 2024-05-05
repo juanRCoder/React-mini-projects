@@ -3,6 +3,7 @@ import { FaReact } from "react-icons/fa";
 import ColorPallet from '../assets/collorPallet.webp';
 import TipAmount from '../assets/tipAmountApp.webp';
 import './Principal.scss';
+import PwsdGenerator from '../assets/pswd-generator.webp';
 
 function Principal() {
     return (
@@ -17,7 +18,7 @@ function Principal() {
                 {[
                     ['Collor Pallet', '/color-pallet', ColorPallet],
                     ['Tip Amount App', '/tip-amount', TipAmount],
-                    ['Tip Amount App', '/tip-amount', TipAmount],
+                    ['Pswd Generator', '/pswd-generator', PwsdGenerator],
                 ].map(([text, path, icon], i) => (
                     <Link key={i} to={path} className='vs:mx-4 mt-5 transition hover:scale-105 cursor-pointer rounded-xl py-4 mx-8 items-center flex flex-col bg-app'>
                         <img className='vm:w-24 vm:h-24 vs:h-28 vs:w-28 h-32 w-32' src={icon} />
