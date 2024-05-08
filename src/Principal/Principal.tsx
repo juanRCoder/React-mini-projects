@@ -16,7 +16,7 @@ function Principal() {
             </div>
             <section className='lg:grid-cols-5 md:grid-cols-4 vm:mt-5 vm:grid-cols-3 vs:grid-cols-2 vs:grid mt-10'>
                 {[
-                    ['Collor Pallet', '/color-pallet', ColorPallet, 'shadow-colorPallet shadow-lg bg-slate-200/75 text-slate-900/75'],
+                    ['Collor Pallet', '/color-pallet', ColorPallet, 'shadow-colorPallet bg-slate-200/75 text-slate-900/75'],
                     ['Tip Amount App', '/tip-amount', TipAmount, 'shadow-tipAmount shadow-lg bg-cyan-100/75 text-sky-900/75'],
                     ['Pswd Generator', '/pswd-generator', PwsdGenerator, 'shadow-pswdGenerator shadow-lg bg-pink-700/75 text-white/75'],
                 ].map(([text, path, icon, shadow], i) => (
