@@ -64,35 +64,35 @@ function ColorPallet() {
 
     return (
         <>
-        <main className={`relative flex items-center justify-center h-screen flex-col ${darkMode ? 'dark:bg-gray-950' : 'dark:bg-slate-300'}`}>
+        <main className={`px-2 font-InriaSans relative flex items-center justify-center h-screen flex-col ${darkMode ? 'dark:bg-gray-950' : 'dark:bg-slate-200'}`}>
             <div style={{
                 top: (copy ? '0px' : '-65px'),
                 transition: 'top 0.3s ease-in-out'
-            }} className={`absolute z-10 w-full font-semibold text-center text-lg py-4 ${darkMode ? 'dark:bg-white dark:text-amber-800' : 'dark:bg-amber-800 dark:text-slate-50'}`}>
+            }} className={`absolute z-10 w-full font-semibold text-center text-lg py-2 ${darkMode ? 'dark:bg-slate-200 dark:text-slate-900' : 'dark:bg-slate-900 dark:text-slate-200'}`}>
                 Color copiado!
             </div>
             <div className='absolute top-2 right-2 flex'>
-                <label className={`p-1 pr-3 font-semibold ${darkMode ? 'text-slate-50' : 'text-amber-800'}`}>Select-Mode: </label>
+                <label className={`p-1 pr-3 font-semibold ${darkMode ? 'text-slate-50' : 'text-slate-900'}`}>Select-Mode: </label>
                 <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" className="sr-only peer" checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
-                    <div className={`group peer ring-0 bg-amber-900 rounded-full outline-none  duration-300 after:duration-300 w-16 h-8 shadow-md peer-checked:bg-white peer-focus:outline-none after:rounded-full after:absolute ${darkMode ? 'after:bg-amber-900' : 'after:bg-white'}  after:outline-none after:h-6 after:w-6 after:top-1 after:left-1 after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 ${darkMode ? 'peer-checked:bg-white' : 'peer-checked:bg-amber-800'}`}>
+                    <div className={`group peer ring-0 bg-slate-800 rounded-full outline-none duration-300 after:duration-300 w-16 h-8 shadow-md peer-checked:bg-slate-200 peer-focus:outline-none after:rounded-full after:absolute ${darkMode ? 'after:bg-slate-900' : 'after:bg-slate-200'}  after:outline-none after:h-6 after:w-6 after:top-1 after:left-1 after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 ${darkMode ? 'peer-checked:bg-slate-200' : 'peer-checked:bg-amber-800'}`}>
                     </div>
                 </label>
             </div>
-            <h1 className={`sm:text-5xl vs:text-center vs:mt-0 mt-8 w-11/12 text-left pb-5 font-bold text-4xl ${darkMode ? 'dark:text-slate-300 text-slate-800' : 'dark:text-amber-800 text-white'}`}>Color Palette</h1>
-            <section className='w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-xl'>
+            <h1 className={`lg:text-6xl sm:text-5xl vs:text-center vs:mt-0 mt-12 w-11/12 pb-2 text-center tracking-tighter text-5xl ${darkMode ? 'dark:text-slate-200 text-slate-800' : 'dark:text-slate-800 text-slate-200'}`}>Color Palette</h1>
+            <section className='vs:gap-1 w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-lg'>
                 {colors.map((color, index) => (
-                    <div key={index} style={{ backgroundColor: `${color}` }} onClick={() => copyToClipboard(color)} className='md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-black font-semibold cursor-pointer w-full p-3 pt-5 pb-5 vs:pt-40 vs:pb-40 flex items-center justify-center'>
+                    <div key={index} style={{ backgroundColor: `${color}` }} onClick={() => copyToClipboard(color)} className='transition lg:hover:scale-95 vs:last:rounded-tr-3xl vs:first:rounded-tl-3xl vs:first:rounded-none first:rounded-tr-3xl first:rounded-tl-3xl md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-white text-center my-1 font-semibold cursor-pointer w-full p-3 pt-4 pb-4 lg:pt-72 vs:pt-60'>
                         {color}
                     </div>
                 ))}
             </section>
-            <section className='w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-xl'>
-                <div style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => copyToClipboard('#FFFFFF')} className='border-l-2 border-slate-400 font-semibold cursor-pointer w-full p-3 pt-5 pb-5 flex items-center justify-center'>#FFFFFF</div>
-                <div style={{ backgroundColor: '#000000', color: '#ffffff' }} onClick={() => copyToClipboard('#000000')} className='font-semibold cursor-pointer w-full p-3 pt-5 pb-5 flex items-center justify-center'>#000000</div>
+            <section className='vs:gap-2 w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-lg'>
+                <div style={{ backgroundColor: '#ffffff', color: '#000000' }} onClick={() => copyToClipboard('#FFFFFF')} className='transition lg:hover:scale-95 vs:rounded-bl-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 lg:m-auto vs:ml-1 my-1 text-center'>#FFFFFF</div>
+                <div style={{ backgroundColor: '#000000', color: '#ffffff' }} onClick={() => copyToClipboard('#000000')} className='transition lg:hover:scale-95 vs:rounded-br-3xl vs:rounded-none rounded-bl-3xl rounded-br-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 text-center'>#000000</div>
             </section>
             <button onClick={() => setChange(!change)} className={
-                `w-full md:w-10/12 lg:w-4/6 max-w-screen-xl justify-center font-bold block p-3 py-5 md:rounded-bl-3xl md:rounded-br-3xl text-xl  ${darkMode ? 'dark:text-slate-300 dark:bg-yellow-950 dark:hover:bg-yellow-900' : 'dark:text-slate-50 dark:bg-gray-950 dark:hover:bg-gray-900'} transition`}>Generator Pallet</button>
+                `vs:h-auto border-none h-auto py-4 mt-5 rounded-xl w-full md:w-10/12 lg:w-4/6 max-w-screen-lg justify-center font-InriaSans font-bold block cursor-pointer text-2xl  ${darkMode ? 'dark:text-slate-900 dark:bg-slate-200 dark:hover:bg-slate-300' : 'dark:text-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800'} transition`}>Generator Pallet</button>
         </main>
     </>
     );
