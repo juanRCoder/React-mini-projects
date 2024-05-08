@@ -1,10 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  corePlugins: {
+    preflight: false,
+  },
+  important: '#root',
   theme: {
     extend: {
+      spacing: {
+        '_8': '-8px',
+      },
       colors: {
-        app: '#384E5B'
+        app: '#384E5B',
+        bg_pswd_g_box2 : '#0F076A',
+        bg_pswd_g_box3 : '#060047',
+        bg_pswd_g_hover: '#140d61',
       },
       screens: {
         vxs: "360px",
@@ -19,6 +29,7 @@ export default {
       },
       fontFamily: {
         spaceMono: ["Space Mono", "monospace"],
+        InriaSans: ["Inria Sans", "sans-serif"]
       },
     },
   },

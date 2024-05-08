@@ -8,9 +8,9 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #121E30;
+  background-color: rgba(10, 28, 68, 0.6);;
 }
-#root {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

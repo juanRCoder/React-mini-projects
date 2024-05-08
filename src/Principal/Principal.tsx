@@ -16,11 +16,11 @@ function Principal() {
             </div>
             <section className='lg:grid-cols-5 md:grid-cols-4 vm:mt-5 vm:grid-cols-3 vs:grid-cols-2 vs:grid mt-10'>
                 {[
-                    ['Collor Pallet', '/color-pallet', ColorPallet],
-                    ['Tip Amount App', '/tip-amount', TipAmount],
-                    ['Pswd Generator', '/pswd-generator', PwsdGenerator],
-                ].map(([text, path, icon], i) => (
-                    <Link key={i} to={path} className='vs:mx-4 mt-5 transition hover:scale-105 cursor-pointer rounded-xl py-4 mx-8 items-center flex flex-col bg-app'>
+                    ['Collor Pallet', '/color-pallet', ColorPallet, 'shadow-[0_0px_30px_0px_rgba(225,225,225,.5)] shadow-lg bg-slate-200/75 text-gray-800'],
+                    ['Tip Amount App', '/tip-amount', TipAmount, 'shadow-[0_0px_30px_0px_rgba(207,250,254,.5)] shadow-lg bg-cyan-100/75 text-sky-900'],
+                    ['Pswd Generator', '/pswd-generator', PwsdGenerator, 'shadow-[0_0px_30px_0px_rgba(219,39,119,.5)] shadow-lg bg-pink-700/75 text-white'],
+                ].map(([text, path, icon, shadow], i) => (
+                    <Link key={i} to={path} className={`${shadow} shadow-iner font-bold no-underline vs:mx-4 mt-5 transition hover:scale-105 cursor-pointer rounded-xl py-4 mx-8 items-center flex flex-col`}>
                         <img className='vm:w-24 vm:h-24 vs:h-28 vs:w-28 h-32 w-32' src={icon} />
                         <p className="vm:text-xl vs:text-2xl pt-1 font-semibold text-3xl text-center w-full">{text}</p>
                     </Link>
