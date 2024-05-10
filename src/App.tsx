@@ -3,6 +3,7 @@ import Principal from './Principal/Principal';
 import ColorPallet from './colorPallet/ColorPallet';
 import TipAmount from './tipAmount/TipAmount';
 import PwsdGenerator from './PswdGenerator/PwsdGenerator';
+import Calculator from './Calculator/Calculator';
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Route path="/tip-amount" element={<TipAmount />} />
           <Route path="/pswd-generator" element={<PwsdGenerator />} />
           {/* En proceso */}
-
+          <Route path="/calculator" element={<Calculator />} />
         </Routes>
       </Router>
     </>

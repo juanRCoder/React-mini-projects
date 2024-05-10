@@ -7,10 +7,8 @@ export default {
   important: '#root',
   theme: {
     extend: {
-      boxShadow: {
-        'colorPallet': '0 0 17px 0 rgb(226,232,240,0.7)',
-        'tipAmount': '0 0 17px 0 rgb(207,250,254,0.7)',
-        'pswdGenerator': '0 0 17px 0 rgb(190,24,93,0.7)',
+      fontSize: {
+        22: '22px',
       },
       spacing: {
         '_8': '-8px',
