@@ -14,7 +14,7 @@ function Principal() {
                 <h1 className='vm:text-4xl vs:text-3xl text-center vs:px-5 px-2 text-slate-100 font-semibold text-22'>React-mini-projects</h1>
                 <FaReact className='text-sky-400 w-12 h-12'/>
             </div>
-            <section className='gap-8 mx-5 vs:grid-cols-3 vs:grid'>
+            <section className='gap-5 mx-5 vs:grid-cols-3 vs:grid'>
                 {[
                     ['Collor Pallet', '/color-pallet', ColorPallet, ],
                     ['Tip Amount App', '/tip-amount', TipAmount],
