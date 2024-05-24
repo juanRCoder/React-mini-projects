@@ -7,7 +7,6 @@ function TipAmount() {
     const [people, setPeople] = useState<string>('');
     const [custom, setCustom] = useState<string>('');
     const [statusPeople, setStatusPeople] = useState<boolean>(false);
-    const [darkMode, setDarkMode] = useState<boolean>(false);
 
     const [totalForPerson, setTotalForPerson] = useState<number>(0);
     const [tipAmountForPerson, setTipAmountForPerson] = useState<number>(0);
@@ -45,27 +44,19 @@ function TipAmount() {
 
     return (
         <>
-            <main className={`${darkMode ? 'dark:bg-sky-900' : 'dark:bg-cyan-100'} vs:h-screen vs:items-center bg-cyan-100 flex flex-col justify-center`}>
-                <div className='absolute top-2 right-2 flex'>
-                    <label className={`p-1 pr-3 font-semibold ${darkMode ? 'text-cyan-100' : 'text-sky-900'}`}>Select-Mode: </label>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" className="sr-only peer" checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
-                        <div className={`group peer ring-0 bg-sky-900 rounded-full outline-none  duration-300 after:duration-300 w-16 h-8 shadow-md peer-checked:bg-cyan-100 peer-focus:outline-none after:rounded-full after:absolute ${darkMode ? 'after:bg-sky-900' : 'after:bg-cyan-100'}  after:outline-none after:h-6 after:w-6 after:top-1 after:left-1 after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 ${darkMode ? 'peer-checked:bg-white' : 'peer-checked:bg-slate-800'}`}>
-                        </div>
-                    </label>
-                </div>
-                <h1 className={`${darkMode ? 'dark:text-cyan-100' : 'dark:text-sky-900'} tracking-wider font-semibold text-sky-900 mt-3 m-auto mb-10 break-words font-spaceMono text-3xl w-20`}>SPLITTER</h1>
-                <div className={`${darkMode ? 'dark:bg-cyan-700' : ''} md:rounded-2xl vs:gap-5 vs:flex font-spaceMono bg-white p-4`}>
+            <main className="vs:h-screen vs:items-center flex flex-col justify-center">
+                <h1 className="text-cyan-100 tracking-wider font-semibold mt-3 m-auto mb-10 break-words font-spaceMono text-3xl w-20">SPLITTER</h1>
+                <div className="md:rounded-2xl vs:gap-5 vs:flex font-spaceMono bg-white/25 p-4">
                     <section className="vs:w-6/12">
                         {/* BILL */}
                         <div>
-                            <label htmlFor="bill" className={`${darkMode ? 'dark:text-slate-300' : ''} text-xl font-semibold text-gray-500 block`}>Bill</label>
-                            <div className={`${darkMode && 'dark:bg-sky-900'} rounded-md bg-slate-200 mt-2 p-3 justify-between flex`}>
+                            <label htmlFor="bill" className={` text-xl font-semibold text-gray-800 block`}>Bill</label>
+                            <div className={` rounded-md bg-slate-200/50 mt-2 p-3 justify-between flex`}>
                                 <img src={iconDollar}
                                     className="w-3 h-6 m-auto"
                                 />
                                 <input type="number" id="bill" name="bill" placeholder="0"
-                                    className={`${darkMode && 'dark:text-slate-300'} placeholder:text-gray-400 w-full text-3xl font-semibold outline-none text-sky-900 text-right bg-transparent`}
+                                    className={`border-none placeholder:text-slate-700 w-full text-3xl font-semibold outline-none text-slate-700 text-right bg-transparent`}
                                     value={bill}
                                     onChange={handleChange}
                                 />
@@ -74,7 +65,7 @@ function TipAmount() {
 
                         {/* SELECT TIP */}
                         <div className="mt-4">
-                            <label htmlFor="custom" className={`${darkMode ? 'dark:text-slate-300' : ''} text-xl font-semibold text-gray-500 block`}>Select Tip %</label>
+                            <label htmlFor="custom" className={`text-xl font-semibold text-gray-800 block`}>Select Tip %</label>
                             <div className="mt-2 gap-4 grid grid-cols-2">
                                 {[
                                     [5],
@@ -83,39 +74,39 @@ function TipAmount() {
                                     [25],
                                     [50],
                                 ].map(([number], i) => (
-                                    <button key={i} className="transition font-bold hover:text-cyan-900 hover:bg-cyan-500 text-xl rounded-md bg-cyan-900 py-2"
+                                    <button key={i} className="transition font-bold hover:text-cyan-900 hover:bg-cyan-100 text-xl rounded-md bg-sky-900 py-2"
                                         onClick={() => Calculator(number)}
                                     >
                                         {number}%
                                     </button>
                                 ))}
                                 <input type="number" name="custom" placeholder="Custom"
-                                    className={`${darkMode && 'dark:text-slate-300 dark:bg-sky-900 dark:placeholder:text-slate-300'} text-sky-950 rounded-md focus:outline focus:outline-sky-600 text-xl font-bold bg-slate-200 text-right pr-2 placeholder:text-gray-500`}
+                                    className={`border-none text-slate-700 rounded-md focus:outline focus:outline-slate-800 text-xl font-bold bg-slate-200/50 text-right pr-2 placeholder:text-slate-700`}
                                     value={custom}
                                     onChange={handleChange}
                                 />
                             </div>
                         </div>
                         <div className="mt-4">
-                            <label htmlFor="people" className={`${darkMode && 'dark:text-slate-300'} text-xl font-semibold text-gray-500 block`}>Number of People</label>
+                            <label htmlFor="people" className={`text-xl font-semibold text-gray-800 block`}>Number of People</label>
 
                             {statusPeople &&
-                                <p className="text-right font-semibold text-red-400">Can't the Zero</p>
+                                <p className="text-right font-semibold text-gray-800">Can't the Zero</p>
                             }
 
-                            <div className={`${darkMode && 'dark:bg-sky-900'} rounded-md bg-slate-200 mt-2 p-3 justify-between flex`}>
+                            <div className={` rounded-md bg-slate-200/50 mt-2 p-3 justify-between flex`}>
                                 <img src={iconPerson}
                                     className="w-4 h-4 m-auto"
                                 />
                                 <input type="number" id="people" name="people" placeholder="0"
-                                    className={`${darkMode && 'dark:text-slate-300'} placeholder:text-gray-400 w-full text-3xl font-semibold outline-none text-sky-900 text-right bg-transparent`}
+                                    className={`border-none placeholder:text-slate-700 w-full text-3xl font-semibold outline-none text-slate-700 text-right bg-transparent`}
                                     value={people}
                                     onChange={handleChange}
                                 />
                             </div>
                         </div>
                     </section>
-                    <section className="vs:justify-between vs:flex-col vs:flex vs:mt-0 vs:w-6/12 p-4 rounded-md mt-8 bg-cyan-900">
+                    <section className="vs:justify-between vs:flex-col vs:flex vs:mt-0 vs:w-6/12 p-4 rounded-md mt-8 bg-sky-900">
                         <div>
                             {[
                                 ['Tip Amount', '/ person', tipAmountForPerson],
@@ -135,7 +126,7 @@ function TipAmount() {
                         </div>
                         <button
                             onClick={resetInputs}
-                            className="md:py-3 hover:bg-cyan-400 font-bold rounded-md text-2xl mt-4 py-1 w-full bg-cyan-500 text-sky-900"
+                            className="md:py-3 hover:bg-cyan-400/50 font-bold rounded-md text-2xl mt-4 py-1 w-full bg-cyan-500 text-sky-900"
                         >Reset</button>
                     </section>
                 </div>

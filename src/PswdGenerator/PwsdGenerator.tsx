@@ -72,8 +72,8 @@ function PwsdGenerator() {
 
 
     return (
-        <section className="vm:justify-center vm:items-center vm:flex bg-pink-700 h-screen font-InriaSans">
-            <div className='max-w-3xl lg:w-1/2 md:w-9/12 vm:rounded-xl vm:w-11/12 vm:h-auto bg-pink-900 w-full h-full'>
+        <section className="vm:justify-center vm:items-center vm:flex h-screen font-InriaSans">
+            <div className='max-w-3xl lg:w-1/2 md:w-9/12 vm:rounded-xl vm:w-11/12 vm:h-auto bg-pink-900/75 w-full h-full'>
                 <h1 className='vm:py-6 text-center m-0 text-4xl py-3 '>Pswd Generator</h1>
                 <div className='vm:mx-5 bg-bg_pswd_g_box2 p-4 rounded-lg mx-3'>
                     <div className='px-3 py-1 bg-bg_pswd_g_box3 rounded-lg shadow-inner text-pink-400'>
