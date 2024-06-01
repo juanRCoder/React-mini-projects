@@ -1,0 +1,6 @@
+.h1 {
+    text-shadow: 0 0 12px #66c4fb;
+}
+.button:hover {
+    text-shadow: 0 0 14px;
+}

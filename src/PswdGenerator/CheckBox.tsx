@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
 interface ColorCheckboxProps {
   islabel: string;
@@ -25,7 +25,7 @@ export const ColorCheckbox: React.FC<ColorCheckboxProps> = ({ islabel, check, on
     <div className=''>
       <label className={`text-2xl ${isChecked ? 'font-bold' : 'font-thin'}`}>
         <StyledCheckbox
-          className='text-pink-400 scale-125'
+          className='text-cyan-400 scale-125'
           checked={isChecked}
           onChange={handleChange}
         />

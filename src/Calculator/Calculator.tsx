@@ -28,41 +28,33 @@ function Calculator() {
         setNumber('');
         setValuePrev('');
     }
+
+    const values = ['7','8','9','*','4','5','6','-','1','2','3','+','-+','0','.']
     return (
         <main className="vs:items-center vs:justify-center vs:flex-col vs:flex bg- font-InriaSans h-screen ">
-            <h1 className='vs:pt-1 text-green-200 text-center py-6 text-5xl'>Calculator 5.0</h1>
-            <section className='lg:w-4/12 vs:rounded-2xl vs:bg-emerald-900/75 p-4 pt-0'>
+            <h1 className='h1 vs:pt-1 text-green-200 text-center py-6 text-5xl'>Calculator 5.0</h1>
+            <section className='max-w-96 lg:w-4/12 vs:rounded-2xl vs:bg-sky-900/75 p-4 pt-0'>
                 <div className='vs:mb-2 mb-5 py-5'>
-                    <p className='font-bold text-md pt-2 text-emerald-600 rounded-t-xl vs:bg-emerald-200 bg-emerald-200/50 text-lg h-10 text-right pr-4'>{valuePrev}</p>
+                    <p className='font-bold text-md pt-2 text-sky-600 rounded-t-xl bg-sky-200 text-lg h-10 text-right pr-4'>{valuePrev}</p>
                     <input type='text' defaultValue={number}
-                        className='vs:text-4xl font-bold text-5xl text-right pb-2 pr-4 border-none w-full text-emerald-800 vs:bg-emerald-200 bg-emerald-200/50 rounded-b-xl'
+                        className='vs:text-4xl font-bold text-5xl text-right pb-2 pr-4 border-none w-full text-sky-900 bg-sky-200 rounded-b-xl'
                     />
                 </div>
                 <div className="gap-1 grid grid-cols-4">
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => addValue('%')}>%</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => addValue('/')}>/</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => minusValue(number)}>CE</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => reset()}>C</button>
+                    <button className='hover:bg-cyan-700 vs:bg-cyan-950 bg-cyan-950' onClick={() => addValue('%')}>%</button>
+                    <button className='hover:bg-cyan-700 vs:bg-cyan-950 bg-cyan-950' onClick={() => addValue('/')}>/</button>
+                    <button className='hover:bg-cyan-700 vs:bg-cyan-950 bg-cyan-950' onClick={() => minusValue(number)}>CE</button>
+                    <button className='hover:bg-cyan-700 vs:bg-cyan-950 bg-cyan-950' onClick={() => reset()}>C</button>
 
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('7')}>7</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('8')}>8</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('9')}>9</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => addValue('*')}>X</button>
-
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('4')}>4</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('5')}>5</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('6')}>6</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => addValue('-')}>-</button>
-
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('1')}>1</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('2')}>2</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('3')}>3</button>
-                    <button className='hover:bg-emerald-700 vs:bg-emerald-800/75 bg-emerald-800/50' onClick={() => addValue('+')}>+</button>
-
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('-')}>+/-</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('0')}>0</button>
-                    <button className='hover:bg-emerald-500 vs:bg-emerald-600/75 bg-emerald-600/50' onClick={() => addValue('.')}>.</button>
-                    <button className='hover:bg-red-300 vs:bg-red-400 bg-red-400/50' onClick={() => operar(number)}>=</button>
+                {values.map((v, i) => {
+                    return <button key={i} className={`${v == '*' || v == '-' || v == '+' 
+                            ? "hover:bg-cyan-700 vs:bg-cyan-950 bg-cyan-950"
+                            : "hover:bg-cyan-500 vs:bg-cyan-600/75 bg-cyan-600/50"}`} 
+                            onClick={() => addValue(v == '-+' ? '+/-': v)}>
+                            {v == '*' ? 'X': (v == '-+' ? '+/-' : v)}
+                        </button>
+                })}
+                <button className='hover:bg-red-600 vs:bg-red-500 bg-red-500' onClick={() => operar(number)}>=</button>
                 </div>
             </section>
         </main>

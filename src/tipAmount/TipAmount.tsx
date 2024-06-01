@@ -1,6 +1,7 @@
 import { useState } from "react";
 import iconDollar from './icon-dollar.svg';
 import iconPerson from './icon-person.svg';
+import './TipAmount.css';
 
 function TipAmount() {
     const [bill, setBill] = useState<string>('');
@@ -45,12 +46,12 @@ function TipAmount() {
     return (
         <>
             <main className="vs:h-screen vs:items-center flex flex-col justify-center">
-                <h1 className="text-cyan-100 tracking-wider font-semibold mt-3 m-auto mb-10 break-words font-spaceMono text-3xl w-20">SPLITTER</h1>
+                <h1 className="h1 text-cyan-100 tracking-wider font-semibold mt-3 m-auto mb-5 break-words font-spaceMono text-3xl w-20">SPLITTER</h1>
                 <div className="md:rounded-2xl vs:gap-5 vs:flex font-spaceMono bg-white/25 p-4">
                     <section className="vs:w-6/12">
                         {/* BILL */}
                         <div>
-                            <label htmlFor="bill" className={` text-xl font-semibold text-gray-800 block`}>Bill</label>
+                            <label htmlFor="bill" className={` text-xl font-semibold text-cyan-100 block`}>Bill</label>
                             <div className={` rounded-md bg-slate-200/50 mt-2 p-3 justify-between flex`}>
                                 <img src={iconDollar}
                                     className="w-3 h-6 m-auto"
@@ -65,7 +66,7 @@ function TipAmount() {
 
                         {/* SELECT TIP */}
                         <div className="mt-4">
-                            <label htmlFor="custom" className={`text-xl font-semibold text-gray-800 block`}>Select Tip %</label>
+                            <label htmlFor="custom" className={`text-xl font-semibold text-cyan-100 block`}>Select Tip %</label>
                             <div className="mt-2 gap-4 grid grid-cols-2">
                                 {[
                                     [5],
@@ -74,21 +75,21 @@ function TipAmount() {
                                     [25],
                                     [50],
                                 ].map(([number], i) => (
-                                    <button key={i} className="transition font-bold hover:text-cyan-900 hover:bg-cyan-100 text-xl rounded-md bg-sky-900 py-2"
+                                    <button key={i} className="transition font-bold hover:text-cyan-100 hover:bg-sky-700 text-xl rounded-md bg-sky-900 py-2"
                                         onClick={() => Calculator(number)}
                                     >
                                         {number}%
                                     </button>
                                 ))}
                                 <input type="number" name="custom" placeholder="Custom"
-                                    className={`border-none text-slate-700 rounded-md focus:outline focus:outline-slate-800 text-xl font-bold bg-slate-200/50 text-right pr-2 placeholder:text-slate-700`}
+                                    className={`border-none text-slate-700 rounded-md focus:outline focus:outline-sky-700 text-xl font-bold bg-slate-200/50 text-right pr-2 placeholder:text-slate-700`}
                                     value={custom}
                                     onChange={handleChange}
                                 />
                             </div>
                         </div>
                         <div className="mt-4">
-                            <label htmlFor="people" className={`text-xl font-semibold text-gray-800 block`}>Number of People</label>
+                            <label htmlFor="people" className={`text-xl font-semibold text-cyan-100 block`}>Number of People</label>
 
                             {statusPeople &&
                                 <p className="text-right font-semibold text-gray-800">Can't the Zero</p>

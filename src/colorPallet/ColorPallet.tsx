@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './ColorPallet.css';
 
 function ColorPallet() {
     const [colors, setColors] = useState<string[]>([]);
@@ -67,22 +68,22 @@ function ColorPallet() {
             <div style={{
                 top: (copy ? '0px' : '-65px'),
                 transition: 'top 0.3s ease-in-out'
-            }} className="bg-black/50 absolute z-10 w-full font-semibold text-center text-lg py-2">
+            }} className="bg-sky-500 text-white absolute z-10 w-full font-semibold text-center text-lg py-2">
                 Color copiado!
             </div>
-            <h1 className="lg:text-6xl sm:text-5xl vs:text-center vs:mt-0 text-white mt-12 w-11/12 pb-2 text-center tracking-tighter text-5xl">Color Palette</h1>
+            <h1 className="h1 lg:text-6xl sm:text-5xl vs:text-center vs:mt-0 text-sky-200 mt-12 w-11/12 pb-2 text-center tracking-tighter text-5xl">Color Palette</h1>
             <section className='vs:gap-1 w-full vs:flex  md:w-10/12 lg:w-4/6 max-w-screen-lg'>
                 {colors.map((color, index) => (
-                    <div key={index} style={{ backgroundColor: `${color}99` }} onClick={() => copyToClipboard(color)} className='transition lg:hover:scale-95 vs:last:rounded-tr-3xl vs:first:rounded-tl-3xl vs:first:rounded-none first:rounded-tr-3xl first:rounded-tl-3xl md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-center my-1 font-semibold cursor-pointer w-full p-3 pt-4 pb-4 lg:pt-72 vs:pt-60'>
+                    <div key={index} style={{ backgroundColor: `${color}e6`, outline: '1px solid #aaa' }} onClick={() => copyToClipboard(color)} className='transition lg:hover:scale-95 vs:last:rounded-tr-3xl vs:first:rounded-tl-3xl vs:first:rounded-none first:rounded-tr-3xl first:rounded-tl-3xl md:last:rounded-tr-3xl md:first:rounded-tl-3xl text-center my-1 font-semibold cursor-pointer w-full p-3 pt-4 pb-4 lg:pt-72 vs:pt-60'>
                         {color}
                     </div>
                 ))}
             </section>
             <section className='vs:gap-2 w-full vs:flex md:w-10/12 lg:w-4/6 max-w-screen-lg'>
-                <div style={{ backgroundColor: '#ffffff99', color: '#00000099' }} onClick={() => copyToClipboard('#FFFFFF')} className='transition lg:hover:scale-95 vs:rounded-bl-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 lg:m-auto vs:ml-1 my-1 text-center'>#FFFFFF</div>
-                <div style={{ backgroundColor: '#00000099', color: '#ffffff99' }} onClick={() => copyToClipboard('#000000')} className='transition lg:hover:scale-95 vs:rounded-br-3xl vs:rounded-none rounded-bl-3xl rounded-br-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 text-center'>#000000</div>
+                <div style={{ backgroundColor: '#ffffffe6', color: '#000000e6', outline: '1px solid #aaa' }} onClick={() => copyToClipboard('#FFFFFF')} className='transition lg:hover:scale-95 vs:rounded-bl-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 lg:m-auto vs:ml-1 my-1 text-center'>#FFFFFF</div>
+                <div style={{ backgroundColor: '#000000e6', color: '#ffffffe6', outline: '1px solid #aaa' }} onClick={() => copyToClipboard('#000000')} className='transition lg:hover:scale-95 vs:rounded-br-3xl vs:rounded-none rounded-bl-3xl rounded-br-3xl font-semibold cursor-pointer w-full p-3 pt-5 pb-5 text-center'>#000000</div>
             </section>
-            <button onClick={() => setChange(!change)} className="vs:h-auto border-none h-auto py-4 mt-5 rounded-xl w-full md:w-10/12 lg:w-4/6 bg-black hover:bg-stone-950 max-w-screen-lg justify-center font-InriaSans font-bold block cursor-pointer text-2xl">Generator Pallet</button>
+            <button onClick={() => setChange(!change)} className="button vs:h-auto border-none h-auto py-4 mt-5 rounded-xl w-full md:w-10/12 lg:w-4/6 bg-cyan-950 hover:bg-sky-950 hover:scale-95 max-w-screen-lg justify-center font-InriaSans font-bold block cursor-pointer text-2xl">Generator Pallet</button>
         </main>
     </>
     );
