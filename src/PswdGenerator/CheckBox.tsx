@@ -23,9 +23,9 @@ export const ColorCheckbox: React.FC<ColorCheckboxProps> = ({ islabel, check, on
 
   return (
     <div className=''>
-      <label className={`text-2xl ${isChecked ? 'font-bold' : 'font-thin'}`}>
+      <label className={`text-cyan-700 font-bold text-2xl ${isChecked ? 'font-bold' : 'font-thin'}`}>
         <StyledCheckbox
-          className='text-cyan-400 scale-125'
+          className='text-cyan-700 scale-125'
           checked={isChecked}
           onChange={handleChange}
         />

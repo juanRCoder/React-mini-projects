@@ -74,10 +74,10 @@ function PwsdGenerator() {
 
     return (
         <section className="vm:justify-center vm:items-center vm:flex h-screen font-InriaSans">
-            <div className='max-w-3xl lg:w-1/2 md:w-9/12 vm:rounded-xl vm:w-11/12 vm:h-auto bg-cyan-900/75 w-full h-full'>
-                <h1 className='h1 vm:py-6 text-center m-0 text-4xl py-3 '>Pswd Generator</h1>
-                <div className='vm:mx-5 bg-sky-950/80 p-4 rounded-lg mx-3'>
-                    <div className='px-3 py-1 bg-sky-950/90 rounded-lg shadow-inner text-cyan-100'>
+            <div className='max-w-3xl lg:w-1/2 md:w-9/12 vm:rounded-xl vm:w-11/12 vm:h-auto bg-slate-200/90 w-full h-full'>
+                <h1 className='h2 vm:py-6 text-center m-0 text-4xl py-3 '>Pswd Generator</h1>
+                <div className='vm:mx-5 bg-sky-500 p-4 rounded-lg mx-3'>
+                    <div className='px-3 py-1 bg-cyan-700 rounded-lg shadow-inner text-cyan-100'>
                         <span className='vm:pl-2 vm:w-0 text-white text-xs text-center w-full block py-2'>GENERATED</span>
                         <div className='vm:pl-2 vm:flex-row flex flex-col items-center'>
                             <p className='vm:text-3xl vm:text-left mb-3 w-full text-center py-2 text-2xl'>
@@ -93,19 +93,19 @@ function PwsdGenerator() {
                     </div>
                 </div>
                 <div className='vm:mx-5 mx-3 mt-6'>
-                    <p className='p text-2xl'>Length:  <b className='text-pink-100'>{length}</b>  characters</p>
+                    <p className='p text-2xl text-cyan-700 font-bold'>Length:  <b className='text-cyan-600'>{length}</b>  characters</p>
                     <div className='grid grid-cols-2'>
                         <CustomSlider length={length} onChange={setLength} />
-                        <button onClick={decrement} className='hover:bg-sky-950/70 transition rounded-md cursor-pointer border-none bg-sky-950 py-3 mr-2'>
+                        <button onClick={decrement} className='hover:bg-cyan-800 transition rounded-md cursor-pointer border-none bg-cyan-700 py-3 mr-2'>
                             <FaMinus className='h-5 w-5' />
                         </button>
-                        <button onClick={increment} className='hover:bg-sky-950/70 transition rounded-md cursor-pointer border-none bg-sky-950 py-3 ml-2'>
+                        <button onClick={increment} className='hover:bg-cyan-800 transition rounded-md cursor-pointer border-none bg-cyan-700 py-3 ml-2'>
                             <FaPlus className='h-5 w-5' />
                         </button>
                     </div>
                 </div>
                 <div className='vm:mx-5  mx-3 mt-6'>
-                    <p className='p text-2xl'>Characters Used:</p>
+                    <p className='text-2xl text-cyan-700 font-bold'>Characters Used:</p>
                     <div className='vm:my-6 flex flex-wrap gap-3 mt-3'>
                         <ColorCheckbox islabel='ABC' check={checked.upper} onCheck={(value) => handleChecks(value, 'upper')} />
                         <ColorCheckbox islabel='abc' check={checked.lower} onCheck={(value) => handleChecks(value, 'lower')} />
