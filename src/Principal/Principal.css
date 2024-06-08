@@ -1,3 +1,14 @@
 .cls {
   text-shadow: 3px 2px 2px #888;
 }
+.principal_maximo {
+  background: linear-gradient(to right, #2b32b2, #1488cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > section {
+    width: 100%;
+    max-width: 1360px;
+    height: 100%;
+  }
+}

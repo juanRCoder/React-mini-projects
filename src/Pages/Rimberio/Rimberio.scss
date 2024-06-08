@@ -1,0 +1,28 @@
+.img {
+    background-image: url(../../assets/imgsRimberio/bg1.webp);
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    max-width: 1440px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a9;
+  }
+  .content {
+    margin: auto;
+    max-width: 1440px;
+  }
+  .img8 {
+    background-image: url(../../assets/imgsRimberio/bg2.webp);
+    background-size: cover;
+  }
+  .img9 {
+    background-image: url(../../assets/imgsRimberio/lg2.webp);
+    background-size: cover;
+  }
+  

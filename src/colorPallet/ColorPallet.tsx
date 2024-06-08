@@ -64,7 +64,7 @@ function ColorPallet() {
 
     return (
         <>
-        <main className={`px-2 font-InriaSans relative flex items-center justify-center h-screen flex-col`}>
+        <main className={`bg-sky-700 px-2 font-InriaSans relative flex items-center justify-center h-screen flex-col`}>
             <div style={{
                 top: (copy ? '0px' : '-65px'),
                 transition: 'top 0.3s ease-in-out'

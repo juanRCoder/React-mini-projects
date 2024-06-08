@@ -45,7 +45,7 @@ function TipAmount() {
 
     return (
         <>
-            <main className="vs:h-screen vs:items-center flex flex-col justify-center">
+            <main className="bg-sky-700 vs:h-screen vs:items-center flex flex-col justify-center">
                 <h1 className="h1 text-cyan-100 tracking-wider font-semibold mt-3 m-auto mb-5 break-words font-spaceMono text-3xl w-20">SPLITTER</h1>
                 <div className="md:rounded-2xl vs:gap-5 vs:flex font-spaceMono bg-white/25 p-4">
                     <section className="vs:w-6/12">

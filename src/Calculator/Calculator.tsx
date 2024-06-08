@@ -31,7 +31,7 @@ function Calculator() {
 
     const values = ['7','8','9','*','4','5','6','-','1','2','3','+','-+','0','.']
     return (
-        <main className="vs:items-center vs:justify-center vs:flex-col vs:flex bg- font-InriaSans h-screen ">
+        <main className="bg-sky-700 vs:items-center vs:justify-center vs:flex-col vs:flex bg- font-InriaSans h-screen ">
             <h1 className='h1 vs:pt-1 text-green-200 text-center py-6 text-5xl'>Calculator 5.0</h1>
             <section className='max-w-96 lg:w-4/12 vs:rounded-2xl vs:bg-sky-900/75 p-4 pt-0'>
                 <div className='vs:mb-2 mb-5 py-5'>

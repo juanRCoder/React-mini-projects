@@ -7,6 +7,16 @@ export default {
   important: '#root',
   theme: {
     extend: {
+      colors: {
+        blue: "#07589f",
+        white: "#ffffff",
+        orange: "#ff7849",
+        red: "#a70e0e",
+        brow1: "#654D3E",
+        brow2: "#433831",
+        cream: "#FFDBB9",
+        black: "#00000096",
+      },
       fontSize: {
         22: '22px',
       },
